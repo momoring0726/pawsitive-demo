@@ -15,8 +15,8 @@ export const pets = [
       cats: false,
     },
     images: [
-      '/images/buddy-1.jpg', // You'll need to add sample images to your /public/images/ folder
-      '/images/buddy-2.jpg',
+      'https://picsum.photos/seed/buddy1/400/400',
+      'https://picsum.photos/seed/buddy2/400/400',
     ],
   },
   {
@@ -33,7 +33,10 @@ export const pets = [
       dogs: true,
       cats: true,
     },
-    images: ['/images/luna-1.jpg', '/images/luna-2.jpg'],
+    images: [
+      'https://picsum.photos/seed/luna1/400/400',
+      'https://picsum.photos/seed/luna2/400/400',
+    ],
   },
   {
     id: 3,
@@ -49,6 +52,6 @@ export const pets = [
       dogs: false,
       cats: false,
     },
-    images: ['/images/charlie-1.jpg'],
+    images: ['https://picsum.photos/seed/charlie1/400/400'],
   },
 ];
