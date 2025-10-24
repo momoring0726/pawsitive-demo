@@ -1,0 +1,20 @@
+---
+// src/pages/adopt.astro
+import MainLayout from '../layouts/MainLayout.astro';
+import AnimalCard from '../components/AnimalCard.astro';
+import { pets } from '../data/pets.js'; // Import our mock data
+---
+
+<MainLayout title="Adoptable Animals">
+  <div class="container mx-auto max-w-5xl p-8">
+    <h1 class="mb-8 text-center text-4xl font-bold text-gray-800">
+      Meet Your New Best Friend
+    </h1>
+    
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {pets.map(pet => (
+        <AnimalCard pet={pet} />
+      ))}
+    </div>
+  </div>
+</MainLayout>

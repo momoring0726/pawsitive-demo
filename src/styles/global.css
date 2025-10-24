@@ -1,0 +1,9 @@
+/* src/styles/global.css */
+
+/* This is the magic line that imports all of Tailwind v4 */
+@import "tailwindcss";
+
+/* Optional: Add a smooth scroll for anchor links */
+html {
+  scroll-behavior: smooth;
+}

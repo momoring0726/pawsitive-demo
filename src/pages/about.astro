@@ -1,0 +1,51 @@
+---
+// src/pages/about.astro
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout title="About Us">
+  <div class="container mx-auto max-w-3xl p-8">
+    <div class="overflow-hidden rounded-lg bg-white p-8 shadow-xl">
+      <h1 class="mb-6 text-center text-4xl font-bold text-gray-800">
+        Our Story
+      </h1>
+      
+      <img 
+        src="/images/team-photo.jpg" 
+        alt="The Pawsitive Start volunteer team"
+        class="mb-6 w-full rounded-lg object-cover shadow-md"
+      />
+      <div class="prose prose-lg max-w-none text-gray-700">
+        <p>
+          <strong>Pawsitive Start Rescue</strong> was founded in 2024 by a small
+          group of friends who were heartbroken by the overcrowding in our local
+          city shelters. We saw so many wonderful, loving animals who were at
+          risk simply because there wasn't enough space.
+        </p>
+        <p>
+          We decided to do something about it. We are an all-volunteer,
+          non-profit organization dedicated to rescuing dogs and cats and
+          placing them in loving foster homes until their permanent, forever
+          families can be found.
+        </p>
+        
+        <h2 class="text-2xl font-semibold text-gray-800">Our Mission</h2>
+        <p>
+          Our mission is simple: to give animals in need a second chance at a
+          happy life. We believe every animal deserves love, care, and a safe
+          place to call home. We provide all necessary veterinary care,
+          including spaying/neutering and vaccinations, for every animal that
+          comes into our rescue.
+        </p>
+
+        <h2 class="text-2xl font-semibold text-gray-800">Our Team</h2>
+        <p>
+          We have no paid staff! We are 100% powered by dedicated volunteers
+          who open their homes, hearts, and schedules to help these animals.
+          From fostering and transport to adoption events and fundraising,
+          our team does it all.
+        </p>
+      </div>
+    </div>
+  </div>
+</MainLayout>

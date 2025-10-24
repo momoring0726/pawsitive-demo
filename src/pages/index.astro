@@ -1,16 +1,37 @@
 ---
-
+// src/pages/index.astro
+import MainLayout from '../layouts/MainLayout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout title="Welcome">
+  <section class="flex h-[60vh] items-center justify-center bg-cover bg-center text-white" style="background-image: url('/images/hero-bg.jpg')">
+    <div class="rounded bg-black/50 p-8 text-center">
+      <h1 class="text-5xl font-bold">Find Your New Best Friend</h1>
+      <p class="mt-4 text-xl">Helping wonderful animals find loving homes.</p>
+      <a href="/adopt" class="mt-6 inline-block rounded bg-blue-600 px-6 py-3 text-lg font-semibold text-white transition hover:bg-blue-700">
+        Meet Our Animals
+      </a>
+    </div>
+  </section>
+
+  <section class="container mx-auto max-w-5xl p-8">
+    <h2 class="mb-6 text-center text-3xl font-bold text-gray-800">How You Can Help</h2>
+    <div class="grid gap-6 md:grid-cols-3">
+      <div class="rounded-lg border bg-white p-6 text-center shadow-lg">
+        <h3 class="text-2xl font-semibold text-blue-700">Adopt</h3>
+        <p class="mt-2">Give a deserving animal a forever home.</p>
+        <a href="/adopt" class="mt-4 inline-block text-blue-600 hover:underline">See available pets</a>
+      </div>
+      <div class="rounded-lg border bg-white p-6 text-center shadow-lg">
+        <h3 class="text-2xl font-semibold text-blue-700">Foster</h3>
+        <p class="mt-2">Open your home temporarily to an animal in need.</p>
+        <a href="/help#foster" class="mt-4 inline-block text-blue-600 hover:underline">Learn about fostering</a>
+      </div>
+      <div class="rounded-lg border bg-white p-6 text-center shadow-lg">
+        <h3 class="text-2xl font-semibold text-blue-700">Donate</h3>
+        <p class="mt-2">Your support helps us cover vet bills and supplies.</p>
+        <a href="/help#donate" class="mt-4 inline-block text-blue-600 hover:underline">Make a donation</a>
+      </div>
+    </div>
+  </section>
+</MainLayout>

@@ -1,0 +1,48 @@
+---
+// src/pages/pets/[slug].astro
+import MainLayout from '../../layouts/MainLayout.astro';
+import { pets } from '../../data/pets.js';
+
+// This function tells Astro which pages to build
+export async function getStaticPaths() {
+  return pets.map((pet) => {
+    return {
+      params: { slug: pet.slug }, // This must match the file name [slug].astro
+      props: { pet }, // This passes the pet object to the component
+    };
+  });
+}
+
+// Get the specific pet data for this page
+const { pet } = Astro.props;
+---
+
+<MainLayout title={pet.name}>
+  <div class="container mx-auto max-w-4xl p-8">
+    <div class="overflow-hidden rounded-lg bg-white shadow-xl">
+      <img src={pet.images[0]} alt={`Photo of ${pet.name}`} class="h-96 w-full object-cover" />
+      
+      <div class="p-6">
+        <h1 class="text-4xl font-bold text-gray-800">{pet.name}</h1>
+        <p class="mt-2 text-xl text-gray-600">
+          {pet.age} | {pet.gender} | {pet.breed}
+        </p>
+        
+        <p class="mt-6 text-lg text-gray-700">{pet.bio}</p>
+        
+        <div class="mt-6 rounded-lg border border-gray-200 bg-gray-50 p-4">
+          <h3 class="text-xl font-semibold">Good With:</h3>
+          <ul class="mt-2 list-inside list-disc space-y-1">
+            <li>Kids: {pet.goodWith.kids ? 'Yes' : 'No'}</li>
+            <li>Other Dogs: {pet.goodWith.dogs ? 'Yes' : 'No'}</li>
+            <li>Cats: {pet.goodWith.cats ? 'Yes' : 'No'}</li>
+          </ul>
+        </div>
+        
+        <a href="/contact" class="mt-8 inline-block rounded bg-blue-600 px-8 py-3 text-lg font-semibold text-white transition hover:bg-blue-700">
+          Interested in {pet.name}? Contact Us!
+        </a>
+      </div>
+    </div>
+  </div>
+</MainLayout>
