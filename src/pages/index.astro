@@ -4,37 +4,46 @@ import MainLayout from '../layouts/MainLayout.astro';
 ---
 
 <MainLayout title="Welcome">
-  <section class="relative flex h-screen items-center justify-center bg-cover bg-center text-white" style="background-image: url('https://picsum.photos/seed/hero-bg/1200/800')">
+  {/* Hero Section */}
+  <section 
+    class="relative flex h-screen items-center justify-center bg-cover bg-center text-white pt-16 md:items-start md:justify-start md:pt-24" 
+    style="background-image: url('/hero-section-img.jpg')" 
+  > 
     {/* Gradient Overlay */}
     <div class="absolute inset-0 bg-gradient-to-t from-gray-900/70 to-blue-900/40"></div> 
     
     {/* Content */}
-    <div class="relative z-10 max-w-2xl p-8 text-center"> {/* Increased max-width slightly */}
-      <h1 class="text-5xl font-bold leading-tight md:text-6xl">Find Your New Best Friend</h1> {/* Adjusted line-height and responsive size */}
+    {/* Centered text by default, left-aligned on medium screens+ */}
+    <div class="relative z-10 max-w-2xl p-8 text-center md:text-left md:ml-16"> 
+      <h1 class="text-5xl font-bold leading-tight md:text-6xl">Find Your New Best Friend</h1> 
       <p class="mt-4 text-xl md:text-2xl">Helping wonderful animals find loving homes.</p>
       <a 
         href="/adopt" 
         class="mt-8 inline-block rounded-full bg-blue-600 px-8 py-3 text-lg font-semibold text-white shadow-lg transition duration-300 ease-in-out hover:bg-blue-700 hover:scale-105" 
-        > {/* Rounded button, increased margin-top, added shadow and transform */}
+      > 
         Meet Our Animals
       </a>
     </div>
-  </section>
+  </section> {/* Comments explaining changes should go outside the tag like this */}
 
+  {/* Calls to Action */}
   <section class="container mx-auto max-w-5xl p-8">
     <h2 class="mb-6 text-center text-3xl font-bold text-gray-800">How You Can Help</h2>
     <div class="grid gap-6 md:grid-cols-3">
-      <div class="rounded-lg border bg-white p-6 text-center shadow-lg transition hover:shadow-xl hover:-translate-y-1"> {/* Added hover effect */}
+      {/* Adopt */}
+      <div class="rounded-lg border bg-white p-6 text-center shadow-lg transition hover:shadow-xl hover:-translate-y-1"> 
         <h3 class="text-2xl font-semibold text-blue-700">Adopt</h3>
         <p class="mt-2">Give a deserving animal a forever home.</p>
         <a href="/adopt" class="mt-4 inline-block text-blue-600 hover:underline">See available pets</a>
       </div>
-      <div class="rounded-lg border bg-white p-6 text-center shadow-lg transition hover:shadow-xl hover:-translate-y-1"> {/* Added hover effect */}
+      {/* Foster */}
+      <div class="rounded-lg border bg-white p-6 text-center shadow-lg transition hover:shadow-xl hover:-translate-y-1"> 
         <h3 class="text-2xl font-semibold text-blue-700">Foster</h3>
         <p class="mt-2">Open your home temporarily to an animal in need.</p>
         <a href="/help#foster" class="mt-4 inline-block text-blue-600 hover:underline">Learn about fostering</a>
       </div>
-      <div class="rounded-lg border bg-white p-6 text-center shadow-lg transition hover:shadow-xl hover:-translate-y-1"> {/* Added hover effect */}
+      {/* Donate */}
+      <div class="rounded-lg border bg-white p-6 text-center shadow-lg transition hover:shadow-xl hover:-translate-y-1"> 
         <h3 class="text-2xl font-semibold text-blue-700">Donate</h3>
         <p class="mt-2">Your support helps us cover vet bills and supplies.</p>
         <a href="/help#donate" class="mt-4 inline-block text-blue-600 hover:underline">Make a donation</a>
