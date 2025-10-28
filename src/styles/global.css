@@ -1,7 +1,26 @@
 /* src/styles/global.css */
 
-/* This is the magic line that imports all of Tailwind v4 */
 @import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* --- Hero Background Styles --- */
+:root {
+  --hero-bg-image: url('/hero-section-mobile-bg.jpg'); /* Default: Mobile background */
+}
+
+@media (min-width: 768px) { /* Corresponds to Tailwind's 'md' breakpoint */
+  :root {
+    --hero-bg-image: url('/hero-section-img.jpg'); /* Desktop background */
+  }
+}
+
+.hero-section-bg {
+  background-image: var(--hero-bg-image);
+}
+/* --- End Hero Background Styles --- */
 
 /* Optional: Add a smooth scroll for anchor links */
 html {
