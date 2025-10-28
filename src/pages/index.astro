@@ -30,20 +30,35 @@ import MainLayout from '../layouts/MainLayout.astro';
   <section class="container mx-auto max-w-5xl p-8">
     <h2 class="mb-6 text-center text-3xl font-bold text-gray-800">How You Can Help</h2>
     <div class="grid gap-6 md:grid-cols-3">
-      {/* Adopt */}
+      {/* Adopt Card */}
       <div class="rounded-lg border bg-white p-6 text-center shadow-lg transition hover:shadow-xl hover:-translate-y-1"> 
+        <img 
+          src="https://placehold.co/600x400/3b82f6/white?text=Adopt" 
+          alt="Placeholder for Adopt section" 
+          class="mb-4 aspect-video w-full rounded-md object-cover" 
+        />
         <h3 class="text-2xl font-semibold text-blue-700">Adopt</h3>
         <p class="mt-2">Give a deserving animal a forever home.</p>
         <a href="/adopt" class="mt-4 inline-block text-blue-600 hover:underline">See available pets</a>
       </div>
-      {/* Foster */}
+      {/* Foster Card */}
       <div class="rounded-lg border bg-white p-6 text-center shadow-lg transition hover:shadow-xl hover:-translate-y-1"> 
+         <img 
+          src="https://placehold.co/600x400/10b981/white?text=Foster" 
+          alt="Placeholder for Foster section" 
+          class="mb-4 aspect-video w-full rounded-md object-cover" 
+        />
         <h3 class="text-2xl font-semibold text-blue-700">Foster</h3>
         <p class="mt-2">Open your home temporarily to an animal in need.</p>
         <a href="/help#foster" class="mt-4 inline-block text-blue-600 hover:underline">Learn about fostering</a>
       </div>
-      {/* Donate */}
+      {/* Donate Card */}
       <div class="rounded-lg border bg-white p-6 text-center shadow-lg transition hover:shadow-xl hover:-translate-y-1"> 
+         <img 
+          src="https://placehold.co/600x400/8b5cf6/white?text=Donate" 
+          alt="Placeholder for Donate section" 
+          class="mb-4 aspect-video w-full rounded-md object-cover" 
+        />
         <h3 class="text-2xl font-semibold text-blue-700">Donate</h3>
         <p class="mt-2">Your support helps us cover vet bills and supplies.</p>
         <a href="/help#donate" class="mt-4 inline-block text-blue-600 hover:underline">Make a donation</a>
