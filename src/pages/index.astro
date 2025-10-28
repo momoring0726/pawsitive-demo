@@ -27,42 +27,58 @@ import MainLayout from '../layouts/MainLayout.astro';
   </section>
 
   {/* Calls to Action */}
-  <section class="container mx-auto max-w-5xl p-8">
-    <h2 class="mb-6 text-center text-3xl font-bold text-gray-800">How You Can Help</h2>
-    <div class="grid gap-6 md:grid-cols-3">
+  <section class="container mx-auto max-w-5xl px-8 py-16">
+    <h2 class="mb-10 text-center text-3xl font-bold text-gray-800 md:text-4xl">How You Can Help</h2>
+    <div class="grid gap-8 md:grid-cols-3">
+      
       {/* Adopt Card */}
-      <div class="rounded-lg border bg-white p-6 text-center shadow-lg transition hover:shadow-xl hover:-translate-y-1"> 
+      <div class="group overflow-hidden rounded-lg bg-white text-center shadow-lg transition duration-300 hover:shadow-xl">
         <img 
-          src="/adopt-img.jpg" 
+          src="https://placehold.co/600x400/3b82f6/white?text=Adopt" 
           alt="Placeholder for Adopt section" 
-          class="mb-4 aspect-video w-full rounded-md object-cover" 
+          class="aspect-video w-full object-cover transition duration-300 group-hover:scale-105"
         />
-        <h3 class="text-2xl font-semibold text-blue-700">Adopt</h3>
-        <p class="mt-2">Give a deserving animal a forever home.</p>
-        <a href="/adopt" class="mt-4 inline-block text-blue-600 hover:underline">See available pets</a>
+        <div class="p-6">
+          <h3 class="text-2xl font-semibold text-blue-700">Adopt</h3>
+          <p class="mt-2 text-gray-600">Give a deserving animal a forever home.</p>
+          <a href="/adopt" class="mt-5 inline-block rounded-full bg-blue-100 px-5 py-2 text-sm font-semibold text-blue-700 transition duration-300 group-hover:bg-blue-600 group-hover:text-white">
+            See available pets &rarr;
+          </a>
+        </div>
       </div>
+
       {/* Foster Card */}
-      <div class="rounded-lg border bg-white p-6 text-center shadow-lg transition hover:shadow-xl hover:-translate-y-1"> 
-         <img 
+      <div class="group overflow-hidden rounded-lg bg-white text-center shadow-lg transition duration-300 hover:shadow-xl"> 
+        <img 
           src="https://placehold.co/600x400/10b981/white?text=Foster" 
           alt="Placeholder for Foster section" 
-          class="mb-4 aspect-video w-full rounded-md object-cover" 
+          class="aspect-video w-full object-cover transition duration-300 group-hover:scale-105" 
         />
-        <h3 class="text-2xl font-semibold text-blue-700">Foster</h3>
-        <p class="mt-2">Open your home temporarily to an animal in need.</p>
-        <a href="/help#foster" class="mt-4 inline-block text-blue-600 hover:underline">Learn about fostering</a>
+         <div class="p-6">
+          <h3 class="text-2xl font-semibold text-emerald-700">Foster</h3>
+          <p class="mt-2 text-gray-600">Open your home temporarily to an animal in need.</p>
+          <a href="/help#foster" class="mt-5 inline-block rounded-full bg-emerald-100 px-5 py-2 text-sm font-semibold text-emerald-700 transition duration-300 group-hover:bg-emerald-600 group-hover:text-white"> 
+            Learn about fostering &rarr;
+          </a>
+        </div>
       </div>
+
       {/* Donate Card */}
-      <div class="rounded-lg border bg-white p-6 text-center shadow-lg transition hover:shadow-xl hover:-translate-y-1"> 
-         <img 
+      <div class="group overflow-hidden rounded-lg bg-white text-center shadow-lg transition duration-300 hover:shadow-xl"> 
+        <img 
           src="https://placehold.co/600x400/8b5cf6/white?text=Donate" 
           alt="Placeholder for Donate section" 
-          class="mb-4 aspect-video w-full rounded-md object-cover" 
+          class="aspect-video w-full object-cover transition duration-300 group-hover:scale-105" 
         />
-        <h3 class="text-2xl font-semibold text-blue-700">Donate</h3>
-        <p class="mt-2">Your support helps us cover vet bills and supplies.</p>
-        <a href="/help#donate" class="mt-4 inline-block text-blue-600 hover:underline">Make a donation</a>
+         <div class="p-6">
+          <h3 class="text-2xl font-semibold text-purple-700">Donate</h3>
+          <p class="mt-2 text-gray-600">Your support helps us cover vet bills and supplies.</p>
+          <a href="/help#donate" class="mt-5 inline-block rounded-full bg-purple-100 px-5 py-2 text-sm font-semibold text-purple-700 transition duration-300 group-hover:bg-purple-600 group-hover:text-white"> 
+            Make a donation &rarr;
+          </a>
+        </div>
       </div>
+      
     </div>
   </section>
 </MainLayout>
