@@ -21,8 +21,3 @@ html {
   background-image: var(--hero-bg-image);
 }
 /* --- End Hero Background Styles --- */
-
-/* Optional: Add a smooth scroll for anchor links */
-html {
-  scroll-behavior: smooth;
-}
