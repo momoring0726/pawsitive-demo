@@ -1,41 +1,67 @@
 ---
 // src/pages/index.astro
+import { Image } from 'astro:assets';
 import MainLayout from '../layouts/MainLayout.astro';
-// No specific CSS import needed here if rules are in global.css
+// Import your hero images from src/assets/
+import heroMobile from '../assets/hero-section-mobile-bg.jpg';
+import heroDesktop from '../assets/hero-section-img.jpg';
+// Placeholder imports (commented out until you download/add these images)
+// import adoptPlaceholder from '../assets/adopt-placeholder.jpg';
+// import fosterPlaceholder from '../assets/foster-placeholder.jpg';
+// import donatePlaceholder from '../assets/donate-placeholder.jpg';
 ---
 
 <MainLayout title="Welcome">
-  {/* Hero Section */}
-  <section 
-    class="hero-section-bg relative flex h-screen items-start justify-center bg-cover bg-center text-white pt-60 md:justify-start md:pt-24"
-  >
+  {/* --- Hero Section --- */}
+  <section class="relative flex h-screen items-start justify-center pt-60 text-white md:justify-start md:pt-24">
+    {/* Background Images using Astro Assets */}
+    <Image
+      src={heroMobile}
+      alt=""
+      class="absolute inset-0 -z-10 h-full w-full object-cover md:hidden"
+      widths={[480, 768]}
+      sizes="100vw"
+      loading="eager"
+      format="webp"
+    />
+    <Image
+      src={heroDesktop}
+      alt=""
+      class="absolute inset-0 -z-10 hidden h-full w-full object-cover md:block"
+      widths={[1024, 1280, 1920]}
+      sizes="100vw"
+      loading="eager"
+      format="webp"
+    />
+
     {/* Gradient Overlay */}
-    <div class="absolute inset-0 bg-gradient-to-t from-gray-900/70 to-blue-900/40"></div> 
-    
+    <div class="absolute inset-0 bg-gradient-to-t from-gray-900/70 to-blue-900/40"></div>
+
     {/* Content */}
-    {/* Centered text block by default, left-aligned on medium screens+ */}
-    <div class="relative z-10 max-w-2xl p-8 text-center md:text-left md:ml-16"> 
-      <h1 class="text-5xl font-bold leading-tight md:text-6xl">Find Your New Best Friend</h1> 
+    <div class="relative z-10 ml-0 max-w-2xl p-8 text-center md:ml-16 md:text-left">
+      <h1 class="text-5xl font-bold leading-tight md:text-6xl">Find Your New Best Friend</h1>
       <p class="mt-4 text-xl md:text-2xl">Helping wonderful animals find loving homes.</p>
-      <a 
-        href="/adopt" 
-        class="mt-8 inline-block rounded-full bg-blue-600 px-8 py-3 text-lg font-semibold text-white shadow-lg transition duration-300 ease-in-out hover:bg-blue-700 hover:scale-105" 
-      > 
+      <a
+        href="/adopt"
+        class="mt-8 inline-block rounded-full bg-blue-600 px-8 py-3 text-lg font-semibold text-white shadow-lg transition duration-300 ease-in-out hover:scale-105 hover:bg-blue-700"
+      >
         Meet Our Animals
       </a>
     </div>
   </section>
+  {/* --- End Hero Section --- */}
 
-  {/* Calls to Action */}
+
+  {/* --- Calls to Action Section --- */}
   <section class="container mx-auto max-w-5xl px-8 py-16">
     <h2 class="mb-10 text-center text-3xl font-bold text-gray-800 md:text-4xl">How You Can Help</h2>
     <div class="grid gap-8 md:grid-cols-3">
-      
-      {/* Adopt Card */}
+
+      {/* Adopt Card (Still using placeholder img) */}
       <div class="group overflow-hidden rounded-lg bg-white text-center shadow-lg transition duration-300 hover:shadow-xl">
-        <img 
-          src="https://placehold.co/600x400/3b82f6/white?text=Adopt" 
-          alt="Placeholder for Adopt section" 
+        <img
+          src="https://placehold.co/600x400/3b82f6/white?text=Adopt"
+          alt="Placeholder for Adopt section"
           class="aspect-video w-full object-cover transition duration-300 group-hover:scale-105"
         />
         <div class="p-6">
@@ -47,38 +73,40 @@ import MainLayout from '../layouts/MainLayout.astro';
         </div>
       </div>
 
-      {/* Foster Card */}
-      <div class="group overflow-hidden rounded-lg bg-white text-center shadow-lg transition duration-300 hover:shadow-xl"> 
-        <img 
-          src="https://placehold.co/600x400/10b981/white?text=Foster" 
-          alt="Placeholder for Foster section" 
-          class="aspect-video w-full object-cover transition duration-300 group-hover:scale-105" 
+      {/* Foster Card (Still using placeholder img) */}
+      <div class="group overflow-hidden rounded-lg bg-white text-center shadow-lg transition duration-300 hover:shadow-xl">
+        <img
+          src="https://placehold.co/600x400/10b981/white?text=Foster"
+          alt="Placeholder for Foster section"
+          class="aspect-video w-full object-cover transition duration-300 group-hover:scale-105"
         />
-         <div class="p-6">
+        <div class="p-6">
           <h3 class="text-2xl font-semibold text-emerald-700">Foster</h3>
           <p class="mt-2 text-gray-600">Open your home temporarily to an animal in need.</p>
-          <a href="/help#foster" class="mt-5 inline-block rounded-full bg-emerald-100 px-5 py-2 text-sm font-semibold text-emerald-700 transition duration-300 group-hover:bg-emerald-600 group-hover:text-white"> 
+          <a href="/help#foster" class="mt-5 inline-block rounded-full bg-emerald-100 px-5 py-2 text-sm font-semibold text-emerald-700 transition duration-300 group-hover:bg-emerald-600 group-hover:text-white">
             Learn about fostering &rarr;
           </a>
         </div>
       </div>
 
-      {/* Donate Card */}
-      <div class="group overflow-hidden rounded-lg bg-white text-center shadow-lg transition duration-300 hover:shadow-xl"> 
-        <img 
-          src="https://placehold.co/600x400/8b5cf6/white?text=Donate" 
-          alt="Placeholder for Donate section" 
-          class="aspect-video w-full object-cover transition duration-300 group-hover:scale-105" 
+      {/* Donate Card (Still using placeholder img) */}
+      <div class="group overflow-hidden rounded-lg bg-white text-center shadow-lg transition duration-300 hover:shadow-xl">
+        <img
+          src="https://placehold.co/600x400/8b5cf6/white?text=Donate"
+          alt="Placeholder for Donate section"
+          class="aspect-video w-full object-cover transition duration-300 group-hover:scale-105"
         />
-         <div class="p-6">
+        <div class="p-6">
           <h3 class="text-2xl font-semibold text-purple-700">Donate</h3>
           <p class="mt-2 text-gray-600">Your support helps us cover vet bills and supplies.</p>
-          <a href="/help#donate" class="mt-5 inline-block rounded-full bg-purple-100 px-5 py-2 text-sm font-semibold text-purple-700 transition duration-300 group-hover:bg-purple-600 group-hover:text-white"> 
+          <a href="/help#donate" class="mt-5 inline-block rounded-full bg-purple-100 px-5 py-2 text-sm font-semibold text-purple-700 transition duration-300 group-hover:bg-purple-600 group-hover:text-white">
             Make a donation &rarr;
           </a>
         </div>
       </div>
-      
-    </div>
+
+    </div> {/* End grid */}
   </section>
+  {/* --- End Calls to Action Section --- */}
+
 </MainLayout>
