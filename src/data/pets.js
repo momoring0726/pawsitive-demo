@@ -1,5 +1,7 @@
 // src/data/pets.js
-// NO IMPORT STATEMENT NEEDED UP HERE
+import buddyImg from '../assets/dog-buddy-img.png';
+import lunaImg from '../assets/cat-luna-img.png';
+import charlieImg from '../assets/dog-charlie-img.png';
 
 export const pets = [
   {
@@ -17,7 +19,7 @@ export const pets = [
       cats: false,
     },
     images: [
-      '/dog-buddy-img.png', // Use the path as a string
+      buddyImg,
     ],
   },
   {
@@ -36,7 +38,7 @@ export const pets = [
       cats: true,
     },
     images: [
-      '/cat-luna-img.png',
+      lunaImg,
     ],
   },
   
@@ -55,6 +57,8 @@ export const pets = [
       dogs: true,
       cats: true,
     },
-    images: ['/dog-charlie-img.png'],
+    images: [
+      charlieImg,
+    ],
   },
 ];

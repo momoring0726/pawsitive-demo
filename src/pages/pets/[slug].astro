@@ -1,5 +1,6 @@
 ---
 // src/pages/pets/[slug].astro
+import { Image } from 'astro:assets'; // Import Astro's Image component
 import MainLayout from '../../layouts/MainLayout.astro';
 import { pets } from '../../data/pets.js';
 
@@ -18,13 +19,11 @@ interface Pet {
     dogs: boolean;
     cats: boolean;
   };
-  images: string[];
+  // This type is changed to 'any' to accept the imported image module
+  images: any[]; 
 }
 
-// Define the page's props
-export interface Props {
-  pet: Pet;
-}
+// The 'Props' interface is no longer needed; Astro infers it.
 
 // This function tells Astro which pages to build
 export async function getStaticPaths() {
@@ -45,13 +44,17 @@ const { pet } = Astro.props;
     <div class="grid grid-cols-1 md:grid-cols-5 md:gap-10">
       
       <div class="md:col-span-2">
-        <img 
+        <Image 
           src={pet.images[0]} 
           alt={`Photo of ${pet.name}`} 
           class="aspect-square w-full rounded-lg object-cover shadow-xl border-4 border-white"
+          widths={[400, 800]}
+          sizes="(max-width: 768px) 100vw, 400px"
+          format="webp"
         />
         </div>
 
+      
       <div class="md:col-span-3 pt-8 md:pt-0">
         
         <h1 class="text-5xl font-bold text-gray-800">{pet.name}</h1>
