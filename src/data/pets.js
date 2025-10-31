@@ -39,6 +39,7 @@ export const pets = [
       '/cat-luna-img.png',
     ],
   },
+  
   {
     id: 3,
     slug: 'charlie',
