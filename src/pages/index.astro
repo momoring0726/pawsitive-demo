@@ -5,10 +5,6 @@ import MainLayout from '../layouts/MainLayout.astro';
 // Import your hero images from src/assets/
 import heroMobile from '../assets/hero-section-mobile-bg.jpg';
 import heroDesktop from '../assets/hero-section-img.jpg';
-// Placeholder imports (commented out until you download/add these images)
-// import adoptPlaceholder from '../assets/adopt-placeholder.jpg';
-// import fosterPlaceholder from '../assets/foster-placeholder.jpg';
-// import donatePlaceholder from '../assets/donate-placeholder.jpg';
 ---
 
 <MainLayout title="Welcome">
@@ -26,6 +22,7 @@ import heroDesktop from '../assets/hero-section-img.jpg';
     />
     <Image
      
+
       src={heroDesktop}
       alt=""
       class="absolute inset-0 -z-10 hidden h-full w-full object-cover md:block"
@@ -40,7 +37,8 @@ import heroDesktop from '../assets/hero-section-img.jpg';
 
     {/* Content */}
     <div class="relative z-10 ml-0 max-w-2xl p-8 text-center md:ml-16 md:text-left">
-      <h1 class="text-5xl font-bold leading-tight md:text-6xl">Find Your New Best Friend</h1>
+      <h1 class="text-5xl font-bold leading-tight md:text-6xl">Find 
+Your New Best Friend</h1>
   
       <p class="mt-4 text-xl md:text-2xl">Helping wonderful animals find loving homes.</p>
       <a
@@ -55,11 +53,9 @@ import heroDesktop from '../assets/hero-section-img.jpg';
 
 
   {/* --- Calls to Action Section --- */}
-  <section class="container mx-auto max-w-5xl px-8 
-py-16">
+  <section class="container mx-auto max-w-5xl px-8 py-16">
     <h2 class="mb-10 text-center text-3xl font-bold text-gray-800 md:text-4xl">How You Can Help</h2>
     <div class="grid gap-8 md:grid-cols-3">
-
       <div class="rounded-lg border border-blue-200 bg-blue-50 p-8 text-center shadow-sm transition duration-300 hover:shadow-lg">
         <i class="fa-solid fa-heart mb-4 text-5xl text-blue-600"></i>
         <h3 class="text-2xl font-semibold text-blue-700">Adopt</h3>
