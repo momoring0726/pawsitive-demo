@@ -18,7 +18,6 @@ export const pets = [
     },
     images: [
       '/dog-buddy-img.png', // Use the path as a string
-      'https://picsum.photos/seed/buddy2/400/400',
     ],
   },
   {
@@ -37,8 +36,7 @@ export const pets = [
       cats: true,
     },
     images: [
-      'https://picsum.photos/seed/luna1/400/400',
-      'https://picsum.photos/seed/luna2/400/400',
+      '/cat-luna-img.png',
     ],
   },
   {
@@ -56,6 +54,6 @@ export const pets = [
       dogs: true,
       cats: true,
     },
-    images: ['https://picsum.photos/seed/charlie1/400/400'],
+    images: ['/dog-charlie-img.png'],
   },
 ];

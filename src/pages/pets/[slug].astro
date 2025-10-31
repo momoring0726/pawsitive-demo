@@ -3,7 +3,6 @@
 import MainLayout from '../../layouts/MainLayout.astro';
 import { pets } from '../../data/pets.js';
 
-// --- START OF FIX ---
 // Define the shape of one pet
 interface Pet {
   id: number;
@@ -26,8 +25,6 @@ interface Pet {
 export interface Props {
   pet: Pet;
 }
-// --- END OF FIX ---
-
 
 // This function tells Astro which pages to build
 export async function getStaticPaths() {
@@ -40,37 +37,84 @@ export async function getStaticPaths() {
 }
 
 // Get the specific pet data for this page
-// TypeScript now knows what 'pet' contains because of the 'Props' interface
 const { pet } = Astro.props;
 ---
 
 <MainLayout title={pet.name}>
-  <div class="container mx-auto max-w-4xl p-8">
-    <div class="overflow-hidden rounded-lg bg-white shadow-xl">
-      <img src={pet.images[0]} alt={`Photo of ${pet.name}`} class="h-96 w-full object-contain" />
+  <div class="container mx-auto max-w-6xl p-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-5 md:gap-10">
       
-      <div class="p-6">
-        <h1 class="text-4xl font-bold text-gray-800">{pet.name}</h1>
-        <p class="mt-2 text-xl text-gray-600">
-          {pet.age} | {pet.gender} | {pet.breed}
+      <div class="md:col-span-2">
+        <img 
+          src={pet.images[0]} 
+          alt={`Photo of ${pet.name}`} 
+          class="aspect-square w-full rounded-lg object-cover shadow-xl border-4 border-white"
+        />
+        </div>
+
+      <div class="md:col-span-3 pt-8 md:pt-0">
+        
+        <h1 class="text-5xl font-bold text-gray-800">{pet.name}</h1>
+        
+        <p class="mt-2 text-2xl font-light text-gray-600">
+          {pet.breed}
         </p>
-        
-        <p class="mt-6 text-lg text-gray-700">{pet.bio}</p>
-        
-        <div class="mt-6 rounded-lg border border-gray-200 bg-gray-50 p-4">
-          <h3 class="text-xl font-semibold">Good With:</h3>
-          <ul class="mt-2 list-inside list-disc space-y-1">
-            {/* These lines will no longer show an error */}
-            <li>Kids: {pet.goodWith.kids ? 'Yes' : 'No'}</li>
-            <li>Other Dogs: {pet.goodWith.dogs ? 'Yes' : 'No'}</li>
-            <li>Cats: {pet.goodWith.cats ? 'Yes' : 'No'}</li>
+        <p class="mt-4 flex gap-x-4 text-lg">
+          <span class="inline-block rounded-full bg-blue-100 px-4 py-1 text-blue-800">
+            {pet.age}
+          </span>
+          <span class="inline-block rounded-full bg-blue-100 px-4 py-1 text-blue-800">
+            {pet.gender}
+          </span>
+          <span class="inline-block rounded-full bg-blue-100 px-4 py-1 text-blue-800">
+            {pet.size}
+          </span>
+        </p>
+
+        <div class="mt-8">
+          <h2 class="text-2xl font-semibold text-gray-700">About {pet.name}</h2>
+          <p class="mt-2 text-lg text-gray-600">{pet.bio}</p>
+        </div>
+
+        <div class="mt-8 rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+          <h3 class="text-2xl font-semibold text-gray-700">Good With:</h3>
+          <ul class="mt-4 space-y-3 text-lg">
+            
+            <li class="flex items-center gap-x-3">
+              <i class:list={[
+                "fa-solid w-6 text-center text-lg",
+                pet.goodWith.kids ? "fa-check text-emerald-600" : "fa-xmark text-red-500"
+              ]}></i>
+              <span class="text-gray-600">Kids</span>
+            </li>
+            
+            <li class="flex items-center gap-x-3">
+              <i class:list={[
+                "fa-solid w-6 text-center text-lg",
+                pet.goodWith.dogs ? "fa-check text-emerald-600" : "fa-xmark text-red-500"
+              ]}></i>
+              <span class="text-gray-600">Other Dogs</span>
+            </li>
+            
+             <li class="flex items-center gap-x-3">
+              <i class:list={[
+                "fa-solid w-6 text-center text-lg",
+                pet.goodWith.cats ? "fa-check text-emerald-600" : "fa-xmark text-red-500"
+              ]}></i>
+              <span class="text-gray-600">Cats</span>
+            </li>
+            
           </ul>
         </div>
         
-        <a href="/contact" class="mt-8 inline-block rounded bg-blue-600 px-8 py-3 text-lg font-semibold text-white transition hover:bg-blue-700">
+        <a 
+          href="/contact" 
+          class="mt-8 inline-block w-full rounded-full bg-blue-600 px-10 py-4 text-center text-xl font-semibold text-white shadow-lg transition duration-300 ease-in-out hover:scale-105 hover:bg-blue-700 md:w-auto"
+        >
           Interested in {pet.name}? Contact Us!
         </a>
       </div>
+
     </div>
   </div>
 </MainLayout>
