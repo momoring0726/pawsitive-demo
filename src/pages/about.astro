@@ -1,51 +1,79 @@
 ---
 // src/pages/about.astro
+import { Image } from 'astro:assets';
 import MainLayout from '../layouts/MainLayout.astro';
+import aboutImage from '../assets/about-section-img.png'; // Import the new image
 ---
 
 <MainLayout title="About Us">
-  <div class="container mx-auto max-w-3xl p-8">
-    <div class="overflow-hidden rounded-lg bg-white p-8 shadow-xl">
-      <h1 class="mb-6 text-center text-4xl font-bold text-gray-800">
-        Our Story
-      </h1>
+  <div class="container mx-auto max-w-5xl p-8 py-16">
+    
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
       
-      <img 
-        src="https://picsum.photos/seed/team-photo/800/600" 
-        alt="A placeholder image for the Pawsitive Start volunteer team"
-        class="mb-6 w-full rounded-lg object-cover shadow-md"
-      />
-      <div class="prose prose-lg max-w-none text-gray-700">
-        <p>
+      <div class="order-1 md:order-2">
+        <Image 
+          src={aboutImage} 
+          alt="Two Pawsitive Start volunteers petting a rescue dog"
+          class="w-full rounded-lg object-cover shadow-2xl"
+          widths={[400, 600]}
+          sizes="(max-width: 768px) 100vw, 600px"
+          format="webp"
+        />
+      </div>
+
+      <div class="text-gray-700 order-2 md:order-1">
+        <h1 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+          Our Story
+        </h1>
+        <p class="text-lg mb-4">
           <strong>Pawsitive Start Rescue</strong> was founded in 2024 by a small
           group of friends who were heartbroken by the overcrowding in our local
           city shelters. We saw so many wonderful, loving animals who were at
           risk simply because there wasn't enough space.
         </p>
-        <p>
+        <p class="text-lg">
           We decided to do something about it. We are an all-volunteer,
           non-profit organization dedicated to rescuing dogs and cats and
           placing them in loving foster homes until their permanent, forever
           families can be found.
         </p>
-        
-        <h2 class="text-2xl font-semibold text-gray-800">Our Mission</h2>
-        <p>
+      </div>
+    </section>
+
+    <section class="mt-20 grid grid-cols-1 md:grid-cols-2 gap-8">
+      
+      <div class="rounded-lg bg-white p-8 shadow-xl border border-gray-100">
+        <div class="flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 mb-5">
+          <i class="fa-solid fa-bullseye text-3xl text-blue-600"></i>
+        </div>
+        <h2 class="text-3xl font-semibold text-gray-800 mb-4">Our Mission</h2>
+        <p class="text-lg text-gray-700 mb-4">
           Our mission is simple: to give animals in need a second chance at a
           happy life. We believe every animal deserves love, care, and a safe
-          place to call home. We provide all necessary veterinary care,
+          place to call home.
+        </p>
+        <p class="text-lg text-gray-700">
+          We provide all necessary veterinary care,
           including spaying/neutering and vaccinations, for every animal that
           comes into our rescue.
         </p>
+      </div>
 
-        <h2 class="text-2xl font-semibold text-gray-800">Our Team</h2>
-        <p>
+      <div class="rounded-lg bg-white p-8 shadow-xl border border-gray-100">
+          <div class="flex items-center justify-center w-16 h-16 rounded-full bg-emerald-100 mb-5">
+          <i class="fa-solid fa-users text-3xl text-emerald-600"></i>
+        </div>
+        <h2 class="text-3xl font-semibold text-gray-800 mb-4">Our Team</h2>
+        <p class="text-lg text-gray-700 mb-4">
           We have no paid staff! We are 100% powered by dedicated volunteers
           who open their homes, hearts, and schedules to help these animals.
+        </p>
+          <p class="text-lg text-gray-700">
           From fostering and transport to adoption events and fundraising,
           our team does it all.
         </p>
       </div>
-    </div>
+
+    </section>
   </div>
 </MainLayout>
