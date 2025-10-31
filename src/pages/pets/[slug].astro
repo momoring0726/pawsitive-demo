@@ -3,6 +3,32 @@
 import MainLayout from '../../layouts/MainLayout.astro';
 import { pets } from '../../data/pets.js';
 
+// --- START OF FIX ---
+// Define the shape of one pet
+interface Pet {
+  id: number;
+  slug: string;
+  name: string;
+  breed: string;
+  age: string;
+  gender: string;
+  size: string;
+  bio: string;
+  goodWith: {
+    kids: boolean;
+    dogs: boolean;
+    cats: boolean;
+  };
+  images: string[];
+}
+
+// Define the page's props
+export interface Props {
+  pet: Pet;
+}
+// --- END OF FIX ---
+
+
 // This function tells Astro which pages to build
 export async function getStaticPaths() {
   return pets.map((pet) => {
@@ -14,13 +40,14 @@ export async function getStaticPaths() {
 }
 
 // Get the specific pet data for this page
+// TypeScript now knows what 'pet' contains because of the 'Props' interface
 const { pet } = Astro.props;
 ---
 
 <MainLayout title={pet.name}>
   <div class="container mx-auto max-w-4xl p-8">
     <div class="overflow-hidden rounded-lg bg-white shadow-xl">
-      <img src={pet.images[0]} alt={`Photo of ${pet.name}`} class="h-96 w-full object-cover" />
+      <img src={pet.images[0]} alt={`Photo of ${pet.name}`} class="h-96 w-full object-contain" />
       
       <div class="p-6">
         <h1 class="text-4xl font-bold text-gray-800">{pet.name}</h1>
@@ -33,6 +60,7 @@ const { pet } = Astro.props;
         <div class="mt-6 rounded-lg border border-gray-200 bg-gray-50 p-4">
           <h3 class="text-xl font-semibold">Good With:</h3>
           <ul class="mt-2 list-inside list-disc space-y-1">
+            {/* These lines will no longer show an error */}
             <li>Kids: {pet.goodWith.kids ? 'Yes' : 'No'}</li>
             <li>Other Dogs: {pet.goodWith.dogs ? 'Yes' : 'No'}</li>
             <li>Cats: {pet.goodWith.cats ? 'Yes' : 'No'}</li>

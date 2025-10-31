@@ -1,4 +1,6 @@
 // src/data/pets.js
+// NO IMPORT STATEMENT NEEDED UP HERE
+
 export const pets = [
   {
     id: 1,
@@ -15,7 +17,7 @@ export const pets = [
       cats: false,
     },
     images: [
-      'https://picsum.photos/seed/buddy1/400/400',
+      '/dog-buddy-img.png', // Use the path as a string
       'https://picsum.photos/seed/buddy2/400/400',
     ],
   },
@@ -28,7 +30,8 @@ export const pets = [
     gender: 'Female',
     size: 'Small',
     bio: "Luna is a sweet, calm cat who loves a warm lap. She can be a little shy at first but warms up quickly with a few gentle pets. She'd be perfect for a quiet home.",
-    goodWith: {
+    // ... rest of Luna's data
+     goodWith: {
       kids: true,
       dogs: true,
       cats: true,
@@ -47,10 +50,11 @@ export const pets = [
     gender: 'Male',
     size: 'Medium',
     bio: 'Charlie is all personality! This scruffy little guy is curious, energetic, and loves to be the center of attention. He would be a great companion for an active owner.',
-    goodWith: {
+    // ... rest of Charlie's data
+     goodWith: {
       kids: true,
-      dogs: false,
-      cats: false,
+      dogs: true,
+      cats: true,
     },
     images: ['https://picsum.photos/seed/charlie1/400/400'],
   },
