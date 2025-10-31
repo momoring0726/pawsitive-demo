@@ -25,6 +25,7 @@ import heroDesktop from '../assets/hero-section-img.jpg';
       format="webp"
     />
     <Image
+     
       src={heroDesktop}
       alt=""
       class="absolute inset-0 -z-10 hidden h-full w-full object-cover md:block"
@@ -40,6 +41,7 @@ import heroDesktop from '../assets/hero-section-img.jpg';
     {/* Content */}
     <div class="relative z-10 ml-0 max-w-2xl p-8 text-center md:ml-16 md:text-left">
       <h1 class="text-5xl font-bold leading-tight md:text-6xl">Find Your New Best Friend</h1>
+  
       <p class="mt-4 text-xl md:text-2xl">Helping wonderful animals find loving homes.</p>
       <a
         href="/adopt"
@@ -53,56 +55,36 @@ import heroDesktop from '../assets/hero-section-img.jpg';
 
 
   {/* --- Calls to Action Section --- */}
-  <section class="container mx-auto max-w-5xl px-8 py-16">
+  <section class="container mx-auto max-w-5xl px-8 
+py-16">
     <h2 class="mb-10 text-center text-3xl font-bold text-gray-800 md:text-4xl">How You Can Help</h2>
     <div class="grid gap-8 md:grid-cols-3">
 
-      {/* Adopt Card (Still using placeholder img) */}
-      <div class="group overflow-hidden rounded-lg bg-white text-center shadow-lg transition duration-300 hover:shadow-xl">
-        <img
-          src="https://placehold.co/600x400/3b82f6/white?text=Adopt"
-          alt="Placeholder for Adopt section"
-          class="aspect-video w-full object-cover transition duration-300 group-hover:scale-105"
-        />
-        <div class="p-6">
-          <h3 class="text-2xl font-semibold text-blue-700">Adopt</h3>
-          <p class="mt-2 text-gray-600">Give a deserving animal a forever home.</p>
-          <a href="/adopt" class="mt-5 inline-block rounded-full bg-blue-100 px-5 py-2 text-sm font-semibold text-blue-700 transition duration-300 group-hover:bg-blue-600 group-hover:text-white">
-            See available pets &rarr;
-          </a>
-        </div>
+      <div class="rounded-lg border border-blue-200 bg-blue-50 p-8 text-center shadow-sm transition duration-300 hover:shadow-lg">
+        <i class="fa-solid fa-heart mb-4 text-5xl text-blue-600"></i>
+        <h3 class="text-2xl font-semibold text-blue-700">Adopt</h3>
+        <p class="mt-2 text-lg text-gray-600">Give a deserving animal a forever home.</p>
+        <a href="/adopt" class="mt-5 inline-block rounded-full bg-blue-600 px-6 py-2 text-base font-semibold text-white transition duration-300 hover:bg-blue-700 hover:scale-105">
+          See available pets &rarr;
+        </a>
       </div>
 
-      {/* Foster Card (Still using placeholder img) */}
-      <div class="group overflow-hidden rounded-lg bg-white text-center shadow-lg transition duration-300 hover:shadow-xl">
-        <img
-          src="https://placehold.co/600x400/10b981/white?text=Foster"
-          alt="Placeholder for Foster section"
-          class="aspect-video w-full object-cover transition duration-300 group-hover:scale-105"
-        />
-        <div class="p-6">
-          <h3 class="text-2xl font-semibold text-emerald-700">Foster</h3>
-          <p class="mt-2 text-gray-600">Open your home temporarily to an animal in need.</p>
-          <a href="/help#foster" class="mt-5 inline-block rounded-full bg-emerald-100 px-5 py-2 text-sm font-semibold text-emerald-700 transition duration-300 group-hover:bg-emerald-600 group-hover:text-white">
-            Learn about fostering &rarr;
-          </a>
-        </div>
+      <div class="rounded-lg border border-emerald-200 bg-emerald-50 p-8 text-center shadow-sm transition duration-300 hover:shadow-lg">
+        <i class="fa-solid fa-house-chimney-user mb-4 text-5xl text-emerald-600"></i>
+        <h3 class="text-2xl font-semibold text-emerald-700">Foster</h3>
+        <p class="mt-2 text-lg text-gray-600">Open your home temporarily to an animal in need.</p>
+        <a href="/help#foster" class="mt-5 inline-block rounded-full bg-emerald-600 px-6 py-2 text-base font-semibold text-white transition duration-300 hover:bg-emerald-700 hover:scale-105">
+          Learn about fostering &rarr;
+        </a>
       </div>
 
-      {/* Donate Card (Still using placeholder img) */}
-      <div class="group overflow-hidden rounded-lg bg-white text-center shadow-lg transition duration-300 hover:shadow-xl">
-        <img
-          src="https://placehold.co/600x400/8b5cf6/white?text=Donate"
-          alt="Placeholder for Donate section"
-          class="aspect-video w-full object-cover transition duration-300 group-hover:scale-105"
-        />
-        <div class="p-6">
-          <h3 class="text-2xl font-semibold text-purple-700">Donate</h3>
-          <p class="mt-2 text-gray-600">Your support helps us cover vet bills and supplies.</p>
-          <a href="/help#donate" class="mt-5 inline-block rounded-full bg-purple-100 px-5 py-2 text-sm font-semibold text-purple-700 transition duration-300 group-hover:bg-purple-600 group-hover:text-white">
-            Make a donation &rarr;
-          </a>
-        </div>
+      <div class="rounded-lg border border-purple-200 bg-purple-50 p-8 text-center shadow-sm transition duration-300 hover:shadow-lg">
+        <i class="fa-solid fa-gift mb-4 text-5xl text-purple-600"></i>
+        <h3 class="text-2xl font-semibold text-purple-700">Donate</h3>
+        <p class="mt-2 text-lg text-gray-600">Your support helps us cover vet bills and supplies.</p>
+        <a href="/help#donate" class="mt-5 inline-block rounded-full bg-purple-600 px-6 py-2 text-base font-semibold text-white transition duration-300 hover:bg-purple-700 hover:scale-105">
+          Make a donation &rarr;
+        </a>
       </div>
 
     </div> {/* End grid */}
