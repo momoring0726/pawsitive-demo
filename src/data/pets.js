@@ -31,7 +31,6 @@ export const pets = [
     gender: 'Female',
     size: 'Small',
     bio: "Luna is a sweet, calm cat who loves a warm lap. She can be a little shy at first but warms up quickly with a few gentle pets. She'd be perfect for a quiet home.",
-    // ... rest of Luna's data
      goodWith: {
       kids: true,
       dogs: true,
@@ -51,7 +50,6 @@ export const pets = [
     gender: 'Male',
     size: 'Medium',
     bio: 'Charlie is all personality! This scruffy little guy is curious, energetic, and loves to be the center of attention. He would be a great companion for an active owner.',
-    // ... rest of Charlie's data
      goodWith: {
       kids: true,
       dogs: true,

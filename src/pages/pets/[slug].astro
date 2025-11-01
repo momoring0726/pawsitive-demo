@@ -1,10 +1,9 @@
 ---
 // src/pages/pets/[slug].astro
-import { Image } from 'astro:assets'; // Import Astro's Image component
+import { Image } from 'astro:assets';
 import MainLayout from '../../layouts/MainLayout.astro';
 import { pets } from '../../data/pets.js';
 
-// Define the shape of one pet
 interface Pet {
   id: number;
   slug: string;
@@ -19,23 +18,20 @@ interface Pet {
     dogs: boolean;
     cats: boolean;
   };
-  // This type is changed to 'any' to accept the imported image module
   images: any[]; 
 }
 
-// The 'Props' interface is no longer needed; Astro infers it.
 
-// This function tells Astro which pages to build
 export async function getStaticPaths() {
   return pets.map((pet) => {
     return {
-      params: { slug: pet.slug }, // This must match the file name [slug].astro
-      props: { pet }, // This passes the pet object to the component
+      params: { slug: pet.slug },
+      props: { pet },
     };
   });
 }
 
-// Get the specific pet data for this page
+
 const { pet } = Astro.props;
 ---
 
